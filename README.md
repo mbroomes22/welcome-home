@@ -1,3 +1,3 @@
-Welcome Home 
+Next Nest 
 
-Welcome Home is a mobile app where users can find their next home in a fun swiping game format.
+Next Nest is a mobile app where users can find their next home in a fun swiping game format.
