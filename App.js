@@ -6,13 +6,13 @@ import {MaterialCommunityIcons} from '@expo/vector-icons'
 import { StyleSheet, Text, View, Image, StatusBar, Dimensions} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Transition, Transitioning } from 'react-native-reanimated';
-import { useFonts, Inter_900Black} from '@expo-google-fonts/inter';
 
 
 const {width} = Dimensions.get('window')
 
 const colors = {
   red: "#ec2379",
+  green: '#3cb371',
   blue: "#0070ff",
   gray: "#777777",
   black: "#000000",
@@ -56,9 +56,6 @@ export default function App() {
     transitionRef.current.animateNextTransition()
     setIndex((index + 1) % Zillow.length)
   }
-  let [fontsLoaded] = useFonts({
-    Inter_900Black,
-  });
 
   return (
     <View style={styles.container}>
@@ -97,7 +94,14 @@ export default function App() {
             label: {
               backgroundColor: colors.red,
               color: colors.white,
-              fontSize: 24
+              fontSize: 45,
+              right: 125,
+              top: 75,
+              transform: [{
+                rotate: '45deg'
+              }, {
+                scale:1.2
+              }]
             },
             wrapper: {
               flexDirection: "column",
@@ -112,9 +116,17 @@ export default function App() {
           title: "LIKE",
           style: {
             label: {
-              backgroundColor: colors.blue,
+              backgroundColor: colors.green,
               color: colors.white,
-              fontSize: 24
+              fontSize: 45,
+              left: 125,
+              top: 75,
+              transform: [{
+                rotate: '-45deg'
+              }, {
+                scale:1.2
+              }]
+              
             },
             wrapper: {
               flexDirection: "column",
@@ -147,7 +159,7 @@ export default function App() {
             backgroundColor= 'transparent'
             underlayColor= 'transparent'
             activeOpacity={0.3}
-            color={colors.blue}
+            color={colors.green}
             onPress={()=> swiperRef.current.swipeRight()}
           />
         </View>

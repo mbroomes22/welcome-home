@@ -41,5 +41,40 @@ export default [
         image: "https://i.pinimg.com/originals/8b/22/88/8b2288bd1cd4b57c3ed3c88d4f2712cd.jpg",
         beds: "1",
         baths: "1"
+    },{
+        id: "7",
+        price: "2500",
+        address: "70 Christopher Columbus Dr, Jersey City, NJ",
+        image: "https://photonet.hotpads.com/search/listingPhoto/RentCafe/477418/0001_1053726393_large.jpg",
+        beds: "1",
+        baths: "1"
+    },{
+        id: "8",
+        price: "2800",
+        address: "33 Hudson St, Jersey City, NJ",
+        image: "https://photonet.hotpads.com/search/listingPhoto/RentCafe/1116539/0040_1934101756_large.jpg",
+        beds: "1",
+        baths: "1.5"
+    },{
+        id: "9",
+        price: "2300",
+        address: "18 Park Ave, Jersey City, NJ",
+        image: "https://photonet.hotpads.com/search/listingPhoto/RentCafe/187928/0006_313593657_large.jpg",
+        beds: "1",
+        baths: "1"
+    },{
+        id: "10",
+        price: "3100",
+        address: "33 Park View Ave, Jersey City, NJ",
+        image: "https://photonet.hotpads.com/search/listingPhoto/BozzutoMITS/809/0017_19404750_large.jpg",
+        beds: "2",
+        baths: "2"
+    },{
+        id: "11",
+        price: "1950",
+        address: "331 Pine st, Jersey City, NJ",
+        image: "https://photonet.hotpads.com/search/listingPhoto/Postlets/12jdehvkp3yd4/0015_314864843_large.jpg",
+        beds: "1",
+        baths: "1"
     }
 ]
