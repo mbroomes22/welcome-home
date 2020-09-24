@@ -1,6 +1,8 @@
 import axios from 'axios';
+import React, {useState} from 'react';
+require('./secrets')
 
-
+let rentals;
 export const zillowAPI = () =>  {
 const apiKey = process.env.REALTOR_API_KEY
 return axios({
@@ -12,15 +14,23 @@ return axios({
     "x-rapidapi-key":apiKey,
     "useQueryString":true
     },"params":{
+    "beds_min":"1",
+    "price_max":"2500",
     "sort":"relevance",
+    "baths_min":"1",
     "city":"Jersey City",
     "state_code":"NJ",
-    "limit":"200",
+    "limit":"2",
     "offset":"0"
     }
     })
     .then((response)=>{
-      console.log("RES.data",response)
+    //   console.log("RES data Property=>",response["data"]["properties"])
+    //   console.log("RES P Details=>",response["data"]["properties"].map((prop, idx )=> {return [idx, `${prop["address"]["line"]}, ${prop["address"]["city"]}, ${prop["address"]["state_code"]}`, prop["photos"][0]["href"], `${prop["community"]["price_min"]} - ${prop["community"]["price_max"]}`, `${prop["community"]["beds_min"]} - ${prop["community"]["beds_max"]}`]}))
+    const rentDetails = response["data"]["properties"].map((prop, idx )=> {return {"id": idx, "address":`${prop["address"]["line"]}, ${prop["address"]["city"]}, ${prop["address"]["state_code"]}`, "image": prop["photos"][0]["href"], "price range": `${prop["community"]["price_min"]} - ${prop["community"]["price_max"]}`, "beds":`${prop["community"]["beds_min"]} - ${prop["community"]["beds_max"]}`}})
+    console.log("RES P Details=>", rentDetails)
+      rentals = rentDetails
+    return response
     })
     .catch((error)=>{
       console.log(error)
@@ -30,7 +40,9 @@ return axios({
 
 
 
-
+export const rentalProps = () => {
+    const forRent = rentals
+}
 
 
 

@@ -1,0 +1,277 @@
+{
+    "config":  { 
+      "adapter": ["xhrAdapter"],
+      "data": undefined,
+      "headers":  {
+        "Accept": "application/json, text/plain, */*",
+        "useQueryString": true,
+        "x-rapidapi-host": "realtor.p.rapidapi.com",
+        "x-rapidapi-key": "e9839cb5e5msh1b8ed0c26c46577p132541jsn21f713981c3f",
+      },
+      "maxBodyLength": -1,
+      "maxContentLength": -1,
+      "method": "get",
+      "params":  {
+        "city": "Jersey City",
+        "limit": "200",
+        "offset": "0",
+        "sort": "relevance",
+        "state_code": "NJ",
+      },
+      "timeout": 0,
+      "transformRequest":  [
+        [ "transformRequest"],
+      ],
+      "transformResponse":  [
+        [ "transformResponse"],
+      ],
+      "url": "https://realtor.p.rapidapi.com/properties/v2/list-for-rent",
+      "validateStatus": ["validateStatus"],
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+    }, 1
+    "data":  { 
+      "meta":  { 
+        "build": "3.23.118",
+        "matching_rows": 2158,
+        "returned_rows": 200,
+        "schema": "core.3",
+        "tracking": "type|meta|data|resource_type|property_list|query|client_id|rdc_mobile_native,13.3.0.53|os|13.3.1|prop_status|for_rent|schema|core.3|limit|offset|city|Jersey+City|state_code|NJ|sort|freshest|count|total^5K|0|5K|1NY^^$0|1|2|$3|4|5|$6|7|8|9|A|B|C|D|E|O|F|P|G|H|I|J|K|L]|A|B|M|Q|N|R]]",
+        "tracking_params":  {
+          "channel": "for_rent",
+          "city": "Jersey City",
+          "county": "unknown",
+          "listingActivity": "unknown",
+          "neighborhood": "unknown",
+          "propertyStatus": "for_rent",
+          "propertyType": "any",
+          "searchBathrooms": "any",
+          "searchBedrooms": "any",
+          "searchCityState": "Jersey City, NJ",
+          "searchCoordinates": "unknown",
+          "searchHouseSqft": "any",
+          "searchLotSqft": "any",
+          "searchMaxPrice": "unknown",
+          "searchMinPrice": "unknown",
+          "searchRadius": "unknown",
+          "searchResults": "200",
+          "siteSection": "for_rent",
+          "sortResults": "freshest",
+          "srpPropertyStatus": "srp:for_rent",
+          "state": "NJ",
+          "version": "1.0",
+          "zip": "unknown",
+        }, 
+      }, 
+      "properties": [
+         {
+          "address":  {
+            "city": "Jersey City",
+            "country": "USA",
+            "county": "Hudson",
+            "lat": 40.71988,
+            "line": "65 Bay St",
+            "lon": -74.03549,
+            "neighborhood_name": "Exchange Place North",
+            "neighborhoods": [
+               {
+                "id": "ba449e5d-91f0-5de2-8ece-6bb58a2c3c59",
+                "level": "sub_neighborhood",
+                "name": "Exchange Place North",
+              },
+               {
+                "id": "512812ce-7ab1-5d21-9a4d-1b23729c46ad",
+                "level": "neighborhood",
+                "name": "The Waterfront",
+              },
+            ],
+            "postal_code": "07302",
+            "state": "New Jersey",
+            "state_code": "NJ",
+            "time_zone": "America/New_York",
+          },
+          "agents": [
+             {
+              "primary": true,
+            },
+          ],
+          "beds": 0,
+          "building_size":  {
+            "units": "sqft",
+          },
+          "client_display_flags":  {
+            "allows_cats": true,
+            "allows_dogs": true,
+            "allows_dogs_large": true,
+            "allows_dogs_small": true,
+            "has_specials": false,
+            "is_apartmentlist": false,
+            "is_co_star": true,
+            "is_mls_rental": false,
+            "is_rental_community": true,
+            "is_rental_unit": false,
+            "is_showcase": true,
+            "lead_form_phone_required": true,
+            "presentation_status": "for_rent",
+            "price_change": 0,
+            "price_reduced": false,
+            "suppress_map_pin": false,
+            "suppress_phone_call_lead_event": true,
+          },
+          "community":  {
+            "baths_max": 2,
+            "baths_min": 1,
+            "beds_max": 2,
+            "beds_min": 1,
+            "contact_number": "(844) 741-3182",
+            "id": 1520092,
+            "name": "Trump Bay Street",
+            "price_max": 4262,
+            "price_min": 2322,
+            "source_id": "7wds17y",
+            "sqft_max": 1308,
+            "sqft_min": 546,
+          },
+          "data_source_name": "co-star",
+          "last_update": "2020-09-23T08:26:00.000Z",
+          "lead_forms":  {
+            "form":  {
+              "email":  {
+                "minimum_character_count": 5,
+                "required": true,
+              },
+              "message":  {
+                "minimum_character_count": 0,
+                "required": false,
+              },
+              "move_in_date":  {
+                "default_date": "2020-10-01T12:00:00Z",
+                "maximum_days_from_today": 180,
+                "minimum_days_from_today": 1,
+                "required": true,
+              },
+              "name":  {
+                "minimum_character_count": 1,
+                "required": true,
+              },
+              "phone":  {
+                "maximum_character_count": 11,
+                "minimum_character_count": 10,
+                "required": true,
+              },
+              "show": false,
+            },
+            "show_agent": false,
+            "show_broker": false,
+            "show_management": false,
+            "show_provider": false,
+          },
+          "list_date": "2017-01-07T14:36:00.000Z",
+          "list_tracking": "type|property|data|prop_id|6145066767|list_id|623418114|comm_id|1520092|page|rank|data_source|co-star|property_status|product_code|advantage_code^1|1|3K2|E8|0^^$0|1|2|$3|4|5|6|7|8|9|G|A|H|B|C|D|I|E|J|F|K]]",
+          "listing_id": "623418114",
+          "listing_status": "active",
+          "lot_size":  {
+            "size": 0,
+            "units": "sqft",
+          },
+          "page_no": 1,
+          "photo_count": 93,
+          "photos": [
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f1155612768o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f737693464o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f662308184o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f498872974o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f287794754o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f348005958o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f1704337445o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f3474436094o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f2907296212o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f1674104220o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f2326318114o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f1197843045o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f2675990694o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f3981553570o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f426829769o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f2894688565o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f19857677o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f240852343o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f668170109o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f2575969145o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f3001980051o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f3248425914o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f1016642032o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f2662218435o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f572037360o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f786898539o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f1422580530o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f1503671970o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f3098488392o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f1637681026o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f1197394776o.jpg",
+            },
+             {
+              "href": "https://ar.rdcpix.com/dfc7e3924b9643cce55267ebb87d7d04c-f3805751"}]
+
+             }]}}
+  

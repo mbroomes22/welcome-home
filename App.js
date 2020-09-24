@@ -1,12 +1,14 @@
 // import { StatusBar } from 'expo-status-bar';
 import Swiper from 'react-native-deck-swiper'
-import Zillow, {zillowAPI} from './Zillow'
+import Zillow, {zillowAPI, rentalProps} from './Zillow'
 import React, {useState, createRef, useEffect} from 'react';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import { StyleSheet, Text, View, Image, StatusBar, Dimensions} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Transition, Transitioning } from 'react-native-reanimated';
-require('./secrets')
+
+
+
 
 const {width} = Dimensions.get('window')
 
@@ -52,6 +54,7 @@ const transitionRef = createRef()
 
 export default function App() {
   const [index, setIndex] = useState(0)
+  const [properties, setProperties] = useState([])
   const onSwiped = () => {
     transitionRef.current.animateNextTransition()
     setIndex((index + 1) % Zillow.length)
@@ -59,7 +62,9 @@ export default function App() {
 
 
   useEffect(() => {  
-    zillowAPI()
+    // const rentals = zillowAPI()
+    // console.log("ZILLOW rental ARR RES=>", rentals)
+    //  setProperties(rentals)
   }, [])
 
   
