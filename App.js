@@ -140,9 +140,23 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.logoP}>
+      <MaterialCommunityIcons.Button 
+        name="account" 
+        size = {34} 
+        backgroundColor="transparent" 
+        underlayColor="transparent" 
+        activeOpacity={0.3} 
+        color={colors.gray} />  
       <Text style={styles.logo}>
       Next Nest
       </Text>
+      <MaterialCommunityIcons.Button
+            name = "home" //"chat"
+            size = {34}
+            backgroundColor= 'transparent'
+            underlayColor= 'transparent'
+            activeOpacity={0.3}
+            color={colors.gray} />
       </View>
       <StatusBar hidden/>
       <MaterialCommunityIcons 
@@ -225,7 +239,7 @@ export default function App() {
         </Transitioning.View>
         <View style={styles.bottomButtonsContainer}>
           <MaterialCommunityIcons.Button
-            name = "close"
+            name = "close-circle-outline"
             size = {94}
             backgroundColor= 'transparent'
             underlayColor= 'transparent'
@@ -234,7 +248,7 @@ export default function App() {
             onPress={()=> swiperRef.current.swipeLeft()}
           />
           <MaterialCommunityIcons.Button
-            name = "check"
+            name = "heart-circle-outline"
             size = {94}
             backgroundColor= 'transparent'
             underlayColor= 'transparent'
@@ -298,7 +312,8 @@ const styles = StyleSheet.create({
   },
   logoP: {
     top: 30,
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
     alignItems: 'center'
   },
   address: {
