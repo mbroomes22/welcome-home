@@ -33,21 +33,22 @@ const transition = (
   </Transition.Sequence>
 )
 
-const Card = ({card}) => (
-  <View style={styles.card}>
-    <Image source={{uri: card.image}} style={styles.cardImage} />
-  </View>
-)
+// let Card = ({card}) => {
+//   return (
+//   <View style={styles.card}>
+//     <Image source={{uri: card.image}} style={styles.cardImage} />
+//   </View>
+// )}
 
-const CardDetails = ({index}) => {
-  return (
-  <View style={styles.CardDetails} key={Zillow[index].id}>
-    <Text style={[styles.text, styles.address]}>{Zillow[index].address}</Text>
-    <Text style={[styles.text, styles.price]}>${Zillow[index].price}</Text>
-    <Text style={[styles.text, styles.beds]}>{Zillow[index].beds} bed</Text>
-    <Text style={[styles.text, styles.baths]}>{Zillow[index].baths} bath</Text>
-  </View>)
-}
+// let CardDetails = ({index}) => {
+//   return (
+//   <View style={styles.CardDetails} key={Zillow[index].id}>
+//     <Text style={[styles.text, styles.address]}>{Zillow[index].address}</Text>
+//     <Text style={[styles.text, styles.price]}>${Zillow[index].price}</Text>
+//     <Text style={[styles.text, styles.beds]}>{Zillow[index].beds} bed</Text>
+//     <Text style={[styles.text, styles.baths]}>{Zillow[index].baths} bath</Text>
+//   </View>)
+// }
 
 const swiperRef = createRef()
 const transitionRef = createRef()
@@ -55,23 +56,87 @@ const transitionRef = createRef()
 export default function App() {
   const [index, setIndex] = useState(0)
   const [properties, setProperties] = useState([])
+  
+
+  useEffect(() => {  
+    //real api info
+    // let rentals = zillowAPI()
+    // console.log("RENTALS=>", rentals.then(res =>  setProperties(res)).catch((error)=>{
+    //   console.log(error)
+    // }))
+    // rentals.then(res =>  setProperties(res)).catch((error)=>{
+    //   console.log(error)
+    // })
+
+    //dummy data
+    setProperties([
+      {
+          id: "1",
+          price: "1500",
+          address: "10 Greene st, Jersey City, NJ",
+          image: "https://ds1.cityrealty.com/img/1655f4e3904fb79cb987ab7755d2b3f4b8f37f88+736++0+60/1-city-point.jpg",
+          beds: "1",
+          baths: "1",
+          description: ""
+      },{
+          id: "2",
+          price: "2500",
+          address: "110 1st st, Jersey City, NJ",
+          image: "https://images1.apartments.com/i2/OYexjpsYBEI-DceI1wLgqdsPpAz-Zr-v7LOmvadrWwQ/111/the-one-jersey-city-nj-living-room.jpg",
+          beds: "1",
+          baths: "1",
+          description: ""
+      }
+  ])
+    console.log("set the properties", properties)
+    
+  }, [])
+
   const onSwiped = () => {
     transitionRef.current.animateNextTransition()
     setIndex((index + 1) % Zillow.length)
   }
 
-
-  useEffect(() => {  
-    const rentals = zillowAPI()
-    console.log("ZILLOW rental ARR RES4=>", rentals.then(res => setProperties(res)).catch((error)=>{
-      console.log(error)
-    }))
-    console.log("set properties", properties)
-    
-  }, [])
-
+  // const Card = ({card}) => {
+    // console.log("CARD", card)
+  //   return (
+  //   <View style={styles.card}>
+  //     <Image source={{uri: card.image}} style={styles.cardImage} />
+  //   </View>
+  // )}
   
 
+  // const CardDetails = ({index}) => {
+  //   return (
+  //   <View style={styles.CardDetails} key={properties[index].id}>
+  //     <Text style={[styles.text, styles.address]}>{properties[index].address}</Text>
+  //     <Text style={[styles.text, styles.price]}>${properties[index].price}</Text>
+  //     <Text style={[styles.text, styles.beds]}>{properties[index].beds} bed</Text>
+  //     <Text style={[styles.text, styles.baths]}>{properties[index].baths} bath</Text>
+  //   </View>)
+  // }
+
+
+
+  let Card = ({card}) => {
+    return (
+    <View style={styles.card}>
+      <Image source={{uri: card.image}} style={styles.cardImage} />
+    </View>
+  )}
+  
+  let CardDetails = ({index}) => {
+    return (
+    <View style={styles.CardDetails} key={Zillow[index].id}>
+      <Text style={[styles.text, styles.address]}>{Zillow[index].address}</Text>
+      <Text style={[styles.text, styles.price]}>${Zillow[index].price}</Text>
+      <Text style={[styles.text, styles.beds]}>{Zillow[index].beds} bed</Text>
+      <Text style={[styles.text, styles.baths]}>{Zillow[index].baths} bath</Text>
+    </View>)
+  }
+
+  console.log("external properties arr", properties)
+  
   return (
     <View style={styles.container}>
       <View style={styles.logoP}>
@@ -89,7 +154,7 @@ export default function App() {
       <View style={styles.swiperContainer}>
       <Swiper
       ref={swiperRef}
-      cards={Zillow}
+      cards={Zillow} //Zillow
       cardIndex={index}
       renderCard={(card) => <Card card={card}/>}
       onSwiped={onSwiped}
