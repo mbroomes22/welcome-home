@@ -2,9 +2,10 @@ import axios from 'axios';
 import React, {useState} from 'react';
 require('./secrets')
 
-let rentals;
+
 export const zillowAPI = () =>  {
 const apiKey = process.env.REALTOR_API_KEY
+
 return axios({
     "method":"GET",
     "url":"https://realtor.p.rapidapi.com/properties/v2/list-for-rent",
@@ -27,10 +28,11 @@ return axios({
     .then((response)=>{
     //   console.log("RES data Property=>",response["data"]["properties"])
     //   console.log("RES P Details=>",response["data"]["properties"].map((prop, idx )=> {return [idx, `${prop["address"]["line"]}, ${prop["address"]["city"]}, ${prop["address"]["state_code"]}`, prop["photos"][0]["href"], `${prop["community"]["price_min"]} - ${prop["community"]["price_max"]}`, `${prop["community"]["beds_min"]} - ${prop["community"]["beds_max"]}`]}))
-    const rentDetails = response["data"]["properties"].map((prop, idx )=> {return {"id": idx, "address":`${prop["address"]["line"]}, ${prop["address"]["city"]}, ${prop["address"]["state_code"]}`, "image": prop["photos"][0]["href"], "price range": `${prop["community"]["price_min"]} - ${prop["community"]["price_max"]}`, "beds":`${prop["community"]["beds_min"]} - ${prop["community"]["beds_max"]}`}})
+    const rentDetails = response["data"]["properties"].map((prop, idx )=> {return {"id": idx, "address":`${prop["address"]["line"]}, ${prop["address"]["city"]}, ${prop["address"]["state_code"]}`, "image": prop["photos"][0]["href"], "price range": `${prop["community"]["price_min"]} - ${prop["community"]["price_max"]}`, "beds":`${prop["community"]["beds_min"]} - ${prop["community"]["beds_max"]}`, "baths": 1}})
     console.log("RES P Details=>", rentDetails)
-      rentals = rentDetails
-    return response
+      
+    return rentDetails  
+    // return response
     })
     .catch((error)=>{
       console.log(error)
@@ -40,9 +42,7 @@ return axios({
 
 
 
-export const rentalProps = () => {
-    const forRent = rentals
-}
+
 
 
 

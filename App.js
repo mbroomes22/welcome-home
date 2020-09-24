@@ -1,6 +1,6 @@
 // import { StatusBar } from 'expo-status-bar';
 import Swiper from 'react-native-deck-swiper'
-import Zillow, {zillowAPI, rentalProps} from './Zillow'
+import Zillow, {zillowAPI, forRent} from './Zillow'
 import React, {useState, createRef, useEffect} from 'react';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import { StyleSheet, Text, View, Image, StatusBar, Dimensions} from 'react-native';
@@ -62,9 +62,12 @@ export default function App() {
 
 
   useEffect(() => {  
-    // const rentals = zillowAPI()
-    // console.log("ZILLOW rental ARR RES=>", rentals)
-    //  setProperties(rentals)
+    const rentals = zillowAPI()
+    console.log("ZILLOW rental ARR RES4=>", rentals.then(res => setProperties(res)).catch((error)=>{
+      console.log(error)
+    }))
+    console.log("set properties", properties)
+    
   }, [])
 
   
