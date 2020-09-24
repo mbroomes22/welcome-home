@@ -1,12 +1,12 @@
 // import { StatusBar } from 'expo-status-bar';
 import Swiper from 'react-native-deck-swiper'
-import Zillow from './Zillow'
-import React, {useState, createRef} from 'react';
+import Zillow, {zillowAPI} from './Zillow'
+import React, {useState, createRef, useEffect} from 'react';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import { StyleSheet, Text, View, Image, StatusBar, Dimensions} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Transition, Transitioning } from 'react-native-reanimated';
-
+require('./secrets')
 
 const {width} = Dimensions.get('window')
 
@@ -56,6 +56,13 @@ export default function App() {
     transitionRef.current.animateNextTransition()
     setIndex((index + 1) % Zillow.length)
   }
+
+
+  useEffect(() => {  
+    zillowAPI()
+  }, [])
+
+  
 
   return (
     <View style={styles.container}>
@@ -214,8 +221,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     color: colors.blue,
-    fontSize: 40,
-    fontFamily: 'Inter_900Black'
+    fontSize: 40
   },
   logoP: {
     top: 30,
