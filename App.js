@@ -9,7 +9,6 @@ import { Transition, Transitioning } from 'react-native-reanimated';
 
 
 
-
 const {width} = Dimensions.get('window')
 
 const colors = {
@@ -135,6 +134,14 @@ export default function App() {
     </View>)
   }
 
+  const homeDetails = () => {
+    console.log("see home details!")
+  }
+
+  const savedHomes = () => {
+    console.log("view my fav apartments!")
+  }
+
   console.log("external properties arr", properties)
   
   return (
@@ -146,7 +153,8 @@ export default function App() {
         backgroundColor="transparent" 
         underlayColor="transparent" 
         activeOpacity={0.3} 
-        color={colors.gray} />  
+        color={colors.gray}   
+        onPress={()=> homeDetails()}/>
       <Text style={styles.logo}>
       Next Nest
       </Text>
@@ -156,7 +164,8 @@ export default function App() {
             backgroundColor= 'transparent'
             underlayColor= 'transparent'
             activeOpacity={0.3}
-            color={colors.gray} />
+            color={colors.gray} 
+            onPress={()=> savedHomes()}/>
       </View>
       <StatusBar hidden/>
       <MaterialCommunityIcons 
