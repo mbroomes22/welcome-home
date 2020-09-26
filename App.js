@@ -52,7 +52,7 @@ const transition = (
 const swiperRef = createRef()
 const transitionRef = createRef()
 
-export default function App() {
+export default function App({navigation}) {
   const [index, setIndex] = useState(0)
   const [properties, setProperties] = useState([])
   
@@ -134,15 +134,7 @@ export default function App() {
     </View>)
   }
 
-  const homeDetails = () => {
-    console.log("see home details!")
-  }
-
-  const savedHomes = () => {
-    console.log("view my fav apartments!")
-  }
-
-  console.log("external properties arr", properties)
+  // console.log("external properties arr", properties)
   
   return (
     <View style={styles.container}>
@@ -154,7 +146,7 @@ export default function App() {
         underlayColor="transparent" 
         activeOpacity={0.3} 
         color={colors.gray}   
-        onPress={()=> homeDetails()}/>
+        onPress={()=> navigation.navigate('About')}/>
       <Text style={styles.logo}>
       Next Nest
       </Text>
@@ -165,7 +157,7 @@ export default function App() {
             underlayColor= 'transparent'
             activeOpacity={0.3}
             color={colors.gray} 
-            onPress={()=> savedHomes()}/>
+            onPress={()=> navigation.navigate('SavedApts')}/>
       </View>
       <StatusBar hidden/>
       <MaterialCommunityIcons 
@@ -186,6 +178,7 @@ export default function App() {
       stackSeparation={14}
       disableTopSwipe
       disableBottomSwipe
+      onPress={()=> navigation.navigate('AptDetails')}
       animateOverlayLabelsOpacity
       animateCardOpacity
       infinite
