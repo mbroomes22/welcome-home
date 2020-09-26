@@ -3,7 +3,7 @@ import Swiper from 'react-native-deck-swiper'
 import Zillow, {zillowAPI, forRent} from './Zillow'
 import React, {useState, createRef, useEffect} from 'react';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
-import { StyleSheet, Text, View, Image, StatusBar, Dimensions} from 'react-native';
+import { StyleSheet, Text, View, Image, StatusBar, Dimensions, Button} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Transition, Transitioning } from 'react-native-reanimated';
 
@@ -147,6 +147,7 @@ export default function App({navigation}) {
         activeOpacity={0.3} 
         color={colors.gray}   
         onPress={()=> navigation.navigate('About')}/>
+        {/* <Button title="about" onPress={()=> navigation.push('About')}/> */}
       <Text style={styles.logo}>
       Next Nest
       </Text>
@@ -158,6 +159,8 @@ export default function App({navigation}) {
             activeOpacity={0.3}
             color={colors.gray} 
             onPress={()=> navigation.navigate('SavedApts')}/>
+            {/* <Button title="apts" onPress={()=> {navigation.push('SavedApts'); console.log('SavedApts')}}/> */}
+            
       </View>
       <StatusBar hidden/>
       <MaterialCommunityIcons 
